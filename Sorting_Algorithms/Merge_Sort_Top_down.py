@@ -24,6 +24,7 @@ def merge_sort(arr):
             j+=1
             k+=1
 
-myList = [54,26,93,17,77,31,44,55,20]
+myList = [54,26,93,17,77,31,44,55,20,30]
 merge_sort(myList)
 print(myList)
+
