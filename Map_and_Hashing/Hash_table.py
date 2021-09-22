@@ -32,10 +32,10 @@ class HashTable(object):
         return -1
 
     def calculate_hash_value(self, string):
-        if len(string) >= 2:
-            code = ord(string[0])*100 +  ord(string[1])
-            return code
-        return -1
+    
+        code = ord(string[0])*100 +  ord(string[1])
+        return code
+        
     
 hash_table = HashTable()
 
