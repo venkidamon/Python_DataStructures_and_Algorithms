@@ -69,5 +69,7 @@ print("--------------")
 inorder(value)
 print("--------------")
 postorder(value)
+print("--------------")
+
 
 
