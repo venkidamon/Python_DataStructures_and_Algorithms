@@ -13,7 +13,7 @@ def _quicksort(array, start, stop):
             if left <= right:
                 array[left], array[right] = array[right], array[left]
                 left += 1
-                right -= 1
+                right -= 1 
         print(array)
         _quicksort(array, start, right)
         _quicksort(array, left, stop)
