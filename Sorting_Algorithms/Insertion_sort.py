@@ -7,5 +7,7 @@ def insertion_sort(lst):
             position = position - 1
         lst[position] = current_value
 
+    return lst
 
-insertion_sort([3,1,2,4,5])
+
+print(insertion_sort([3,1,2,4,5]))
