@@ -12,6 +12,6 @@ def insertion_sort(lst):
     return lst
 
 
-lst = [366,5,8,9,6,2,24,34,2,32,43,24,32,423,42,3,2342,3]
+lst = [423,42,3,2342,3]
 
 print(insertion_sort(lst))

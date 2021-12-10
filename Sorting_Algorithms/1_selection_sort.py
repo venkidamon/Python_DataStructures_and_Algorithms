@@ -30,6 +30,6 @@ def selection_sort(lst):
     return lst
 
 
-print(selection_sort([3,5,8,9,6,2]))
+print(selection_sort([3,5,8,9,6,2,2]))
         
 

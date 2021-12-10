@@ -1,9 +1,6 @@
-x = "1223334.5453453"
+x =[21,2423,2432,423423,4132,34]
+temp = ""
+for k in range(len(x)-1,-1,-1):
+    temp += str(x[k])
 
-y = [a for a in x.split('.') if a]
-
-
-for b in x.split('.'):
-    if b:
-        print(b)
-print(y)
+print(temp)
