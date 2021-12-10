@@ -44,7 +44,8 @@ class Linked_List:
         self._size += 1
 
     def add_any(self, ele, position):
-        '''this'''
+        '''this function add the new element based on the position defined the newest element next is assigned 
+        first and then previous element next is assigned to the newest element'''
         newest = _Node(ele)
         p = self._head
         i = 1
@@ -54,6 +55,18 @@ class Linked_List:
         newest._next = p._next
         p._next = newest
         self._size += 1
+
+    def delete_first(self):
+        '''This function deletes the first element of the linked list and the next element is assigned as head
+        if no element is present both head and tail are set to None'''
+        if self.isEmpty():
+            return
+        e = self._head._element
+        self._head = self._head._next
+        self._size -= 1
+        if self.isEmpty():
+            self._tail = None
+        return e
 
 
     def display(self):
@@ -89,6 +102,11 @@ L.display()
 print(len(L))
 print(L.search(15))
 
-L.add_any(56,1)
+L.add_any(56,2)
 L.display()
 print(len(L))
+
+L.delete_first()
+L.display()
+print(len(L))
+
