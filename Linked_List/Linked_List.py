@@ -56,16 +56,33 @@ class Linked_List:
         p._next = newest
         self._size += 1
 
-    def delete_first(self):
+    def remove_first(self):
         '''This function deletes the first element of the linked list and the next element is assigned as head
         if no element is present both head and tail are set to None'''
         if self.isEmpty():
+            print('List is Empty')
             return
         e = self._head._element
         self._head = self._head._next
         self._size -= 1
         if self.isEmpty():
             self._tail = None
+        return e
+
+    def remove_last(self):
+        if self.isEmpty():
+            print('List is Empty')
+            return
+        p = self._head
+        i = 1
+        while i < len(self) - 1:
+            p = p._next
+            i += 1
+        self._tail = p
+        p = p._next
+        e = p._element
+        self._tail._next = None
+        self._size -= 1
         return e
 
 
@@ -103,10 +120,15 @@ print(len(L))
 print(L.search(15))
 
 L.add_any(56,2)
+
+
+L.remove_last()
 L.display()
 print(len(L))
 
-L.delete_first()
+L.remove_last()
 L.display()
 print(len(L))
+
+
 
