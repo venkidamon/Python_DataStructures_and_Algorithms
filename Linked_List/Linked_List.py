@@ -70,6 +70,7 @@ class Linked_List:
         return e
 
     def remove_last(self):
+        '''This function deletes the last element of the linked list and the previous element is assigned as new tail'''
         if self.isEmpty():
             print('List is Empty')
             return
@@ -82,6 +83,18 @@ class Linked_List:
         p = p._next
         e = p._element
         self._tail._next = None
+        self._size -= 1
+        return e
+
+
+    def remove_any(self, position):
+        p = self._head
+        i = 1
+        while i < position - 1:
+            p = p._next
+            i += 1
+        e = p._next._element
+        p._next = p._next._next
         self._size -= 1
         return e
 
@@ -126,9 +139,9 @@ L.remove_last()
 L.display()
 print(len(L))
 
-L.remove_last()
+e = L.remove_any(3)
 L.display()
 print(len(L))
 
-
+print(e)
 
