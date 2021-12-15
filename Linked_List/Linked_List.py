@@ -88,6 +88,7 @@ class Linked_List:
 
 
     def remove_any(self, position):
+        '''This function remove any element between the linked list'''
         p = self._head
         i = 1
         while i < position - 1:
