@@ -17,7 +17,7 @@ def partition(A, low, high):
             A[i], A[j] = A[j],A[i]
         else:
             break
-    print(A)
+    
     A[low], A[j] = A[j], A[low]
     return j
 

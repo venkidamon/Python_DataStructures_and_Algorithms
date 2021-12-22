@@ -15,7 +15,7 @@ def count_sort(A):
             i = i + 1
     
 
-A = [3,5,8,9,6,2,3,5,5]
+A = [3,5,8,9,6,2,3,5,50000]
 
 count_sort(A)
 print(A)
