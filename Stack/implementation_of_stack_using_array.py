@@ -4,7 +4,7 @@
 class Stack:
     def __init__(self):
         self._stack = []
-        self._size = 0
+        self._size = 0           #we can also use the inbuilt len method
 
     
     def __len__(self):
@@ -30,8 +30,8 @@ class Stack:
         e = self._stack.pop()
         self._size -= 1
         return e
-    def display(self):
-        return self._stack
+    # def display(self):
+    #     return self._stack
 
 s = Stack()
 s.push(10)
@@ -50,4 +50,6 @@ print(s.pop())
 s.push(60)
 s.push(70)
 print(s.display())
+print(s.top())
+
 

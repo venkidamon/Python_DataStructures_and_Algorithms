@@ -127,22 +127,3 @@ L.add_last(9)
 L.add_last(3)
 L.display()
 
-
-L.add_first(15)
-L.display()
-print(len(L))
-print(L.search(15))
-
-L.add_any(56,2)
-
-
-L.remove_last()
-L.display()
-print(len(L))
-
-e = L.remove_any(3)
-L.display()
-print(len(L))
-
-print(e)
-
