@@ -1,29 +1,26 @@
 class Solution:
     def lengthOfLongestSubstring(self, s):
-        whole_list = []
-        for x in range(len(s) + 1):
-            for y in range(x):
-                whole_list.append(s[y:x])
-        
-        temp1 = 0
-        for x in whole_list:
+        l = 0
+        temp = 0
+        for i in range(len(s)):
+            if temp > l:
+                l = temp
             temp = 0
-           
-            empty_lst = []
-            for y in range(len(x)):
-                if x[y] not in empty_lst:
-                    empty_lst.append(x[y])
-                    temp+=1
-                else:
-                    break
-            if temp > temp1:
-                temp1 = temp
-            
-        return temp1
+            for j in range(i, len(s)):
+                lst = ''
+                
+                temp = 0
+                e = s[i:(j+1)]
+                for x in e:
+                    if x not in lst:
+                        lst += x
+                    else:
+                        break
+                temp = len(lst)
+        if temp > l:
+            l = temp
+        return l
 
-
-
-
-    
 s = Solution()
-print(s.lengthOfLongestSubstring("abaaaaacdeasdafghhfhijklmnuyuiobpqrstyuyuvadawxyzAasddBCDEsfFbGHIJiuKLMNafOPQRSTsfdUVsXYZ012345fds678s9!"))
+print(s.lengthOfLongestSubstring("bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"
+))
