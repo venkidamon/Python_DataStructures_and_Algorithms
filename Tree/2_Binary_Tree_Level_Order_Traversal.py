@@ -77,12 +77,26 @@ class Binary_Tree:
                 print(t._right._element, end = ' ')
                 q.enqueue(t._right)
 
-    def node_count(self, root):
+    def node_count(self, root):          #function to find the number of nodes
 
         if root:
             x = self.node_count(root._left)
             y = self.node_count(root._right)
             return x + y + 1
+        return 0
+
+    def height_tree(self, root):          #function to reduce the height of the tree by 1 
+        x = self.__height_tree(root)
+        return x - 1
+
+    def __height_tree(self, root):          #actual function that find the height of the tree
+        if root:
+            x = self.__height_tree(root._left)
+            y = self.__height_tree(root._right)
+            if x > y:
+                return x + 1
+            else:
+                return y + 1
         return 0
         
 
@@ -109,3 +123,6 @@ t.levelorder()
 
 print()
 print(t.node_count(t._root))
+
+print(t.height_tree(t._root))
+
