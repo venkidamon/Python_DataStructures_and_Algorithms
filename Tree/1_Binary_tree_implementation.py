@@ -15,19 +15,19 @@ class Binary_Tree:
     def make_tree(self, element, left = None, right = None):
         self._root = _Node(element, left._root, right._root)
 
-    def inorder(self, troot):
+    def inorder(self, troot):         #inorder traversal
         if troot:
             self.inorder(troot._left)
             print(troot._element, end=' ')
             self.inorder(troot._right)
 
-    def preorder(self, troot):
+    def preorder(self, troot):          #preorder traversal
         if troot:
             print(troot._element, end=' ')
             self.preorder(troot._left)
             self.preorder(troot._right)
         
-    def postorder(self, troot):
+    def postorder(self, troot):         #post order traversal
         if troot:
             self.preorder(troot._left)
             self.preorder(troot._right)
