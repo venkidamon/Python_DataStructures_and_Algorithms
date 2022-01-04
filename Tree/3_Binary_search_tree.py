@@ -21,16 +21,14 @@ class Binary_Tree:
     def search(self, root, element):
         if root:
             if element == root._element:
-                print('element found')
-                return
+                return True
             if element < root._element:
-                self.search(root._left, element)
+                return self.search(root._left, element)
 
             if element > root._element:
-                self.search(root._right, element)
+                return self.search(root._right, element)
         else:
-            print('not found')
-            return 0
+            return False
 
     def search_iter(self, element):
         root = self._root
@@ -69,7 +67,7 @@ p.make_tree(5,q,r)
 
 p.inorder(p._root)
 
-p.search(p._root, 8)
+print(p.search(p._root, 80))
 
 
 print(p.search_iter(50))
