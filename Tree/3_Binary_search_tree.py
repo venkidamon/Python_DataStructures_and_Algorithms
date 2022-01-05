@@ -61,6 +61,17 @@ class Binary_Tree:
         else:
             self._root = n
 
+    def recursive_insert(self, root, element):
+        if root:
+            if element < root._element:
+                root._left = self.recursive_insert(root._left, element)
+            elif element > root._element:
+                root._right = self.recursive_insert(root._right, element)
+        else:
+            n = _Node(element)
+            root = n
+        return root
+
 p = Binary_Tree()
 q = Binary_Tree()
 r = Binary_Tree()
@@ -94,7 +105,7 @@ print(p.search(p._root, 80))
 print(p.search_iter(50))
 
 
-p.insert(p._root, 52)
+p.recursive_insert(p._root, 52)
 p.inorder(p._root)
 
 
