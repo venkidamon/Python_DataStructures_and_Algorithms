@@ -72,40 +72,40 @@ class Binary_Tree:
             root = n
         return root
 
-p = Binary_Tree()
-q = Binary_Tree()
-r = Binary_Tree()
-s = Binary_Tree()
-t = Binary_Tree()
-u = Binary_Tree()
-v = Binary_Tree()
-w = Binary_Tree()
-# a = Binary_Tree()
-# a.insert(a._root, 2)
-# a.insert(a._root, 7)
-# a.inorder(a._root)
+# p = Binary_Tree()
+# q = Binary_Tree()
+# r = Binary_Tree()
+# s = Binary_Tree()
+# t = Binary_Tree()
+# u = Binary_Tree()
+# v = Binary_Tree()
+# w = Binary_Tree()
+a = Binary_Tree()
+a._root = a.recursive_insert(a._root, 2)
+a.recursive_insert(a._root, 7)
+a.inorder(a._root)
 
 
-s.make_tree(1,w,w)
-t.make_tree(4,w,w)
-u.make_tree(6,w,w)
-v.make_tree(9,w,w)
-q.make_tree(3,s,t)
-r.make_tree(8,u,v)
-p.make_tree(5,q,r)
+# s.make_tree(1,w,w)
+# t.make_tree(4,w,w)
+# u.make_tree(6,w,w)
+# v.make_tree(9,w,w)
+# q.make_tree(3,s,t)
+# r.make_tree(8,u,v)
+# p.make_tree(5,q,r)
 
 
 
 
-p.inorder(p._root)
+# p.inorder(p._root)
 
-print(p.search(p._root, 80))
-
-
-print(p.search_iter(50))
+# print(p.search(p._root, 80))
 
 
-p.recursive_insert(p._root, 52)
-p.inorder(p._root)
+# print(p.search_iter(50))
+
+
+# p.recursive_insert(p._root, 52)
+# p.inorder(p._root)
 
 
