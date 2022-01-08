@@ -53,12 +53,10 @@ class Binary_Search_Tree:
         while not q.isEmpty():
             t = q.dequeue()
             if t._left:
-                print('/')
-                print(t._left._element)
+                print(t._left._element, end = ' ')
                 q.enqueue(t._left)
             if t._right:
-                print('\\')
-                print(t._right._element)
+                print(t._right._element, end = ' ')
                 q.enqueue(t._right)
 
 
@@ -85,19 +83,40 @@ class Binary_Search_Tree:
         else:
             return False
 
-    # def delete_leaf_node(self, element):
+    # def delete(self, element):
     #     p = self._root
-    #     parent_node = None
+    #     parent_p = None
     #     while p and p._element != element:
-    #         parent_node = p
+    #         parent_p = p
     #         if element < p._element:
     #             p = p._left
-    #         elif element > p._element:
+    #         else:
     #             p = p._right
-    #     if parent_node._left._element == element:
-    #         parent_node._left = None
-    #     elif parent_node._right._element == element:
-    #         parent_node._right = None
+    #     if not p:
+    #         print('no element is present')
+    #         return
+    #     if p._left and p._right:
+    #         s = p._right
+    #         parent_s = p
+    #         while s._left:
+    #             parent_s = s
+    #             s = s._left
+    #         p._element = s._element
+    #         p = s
+    #         parent_p = parent_s
+    #     c = None
+    #     if p._left:
+    #         c = p._left
+    #     else:
+    #         c = p._right
+    #     if p == parent_p._left:
+    #         parent_p._left = c
+    #     elif p == parent_p._right:
+    #         parent_p._right = c
+    #     else:
+    #         if p == self._root:
+    #             self._root = None
+
         
 
     def height(self, root):
@@ -119,29 +138,29 @@ class Binary_Search_Tree:
 
             
 a = Binary_Search_Tree()
-a._root = a.recursive_insert(a._root,5)
-a.recursive_insert(a._root,4)
-a.recursive_insert(a._root,3)
-a.recursive_insert(a._root,2)
-a.recursive_insert(a._root,1)
-a.insert(a._root,6)
-a.insert(a._root,7)
-a.insert(a._root,8)
-a.insert(a._root,9)
-a.insert(a._root,0)
+a.insert(a._root, 40)
+a.recursive_insert(a._root, 12)
+a.insert(a._root, 15)
+a.insert(a._root, 65)
+a.insert(a._root, 60)
+a.insert(a._root, 52)
+a.recursive_insert(a._root, 45)
+a.recursive_insert(a._root, 56)
+a.recursive_insert(a._root, 90)
+a.recursive_insert(a._root, 70)
+a.recursive_insert(a._root, 95)
 
-a.inorder(a._root)
-print(a.search(5))
-print(a.search(0))
-print(a.search(56))
-print(a.search(21))
+a.delete(65)
+a.delete(40)
+a.delete(12)
+a.delete(15)
+a.delete(60)
+a.delete(52)
+a.delete(45)
+a.delete(56)
+a.delete(90)
+a.delete(70)
+a.delete(95)
+a.delete(95)
 
-print(a.recursive_searh(a._root, 4))
-print(a.recursive_searh(a._root, 400))
-print(a.recursive_searh(a._root, 3))
 
-print(a.height(a._root))
-
-a.delete_leaf_node(0)
-
-a.level_order(a._root)
