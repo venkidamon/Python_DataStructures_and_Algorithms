@@ -117,11 +117,78 @@ class Binary_Search_Tree:
     #         if p == self._root:
     #             self._root = None
 
+    def delete(self, element):
+        p = self._root
+        parent_p = None
+        while p and p._element != element:
+            parent_p = p
+            if element < p._element:
+                p = p._left
+            elif element > p._element:
+                p = p._right
+        if not p:
+            print('no element')
+            return 
+        if parent_p == None:
+            if p._left == None and p._right:
+                if element == self._root._element:
+                    c = p._right
+                    p._element = c._element
+                    p = c
+                    x = None
+                    if p._left:
+                        x = p._left
+                    else:
+                        x = p._right
+                    if p == self._root._right:
+                        self._root = p
+            elif p._right == None and p._left:
+                if element == self._root._element:
+                    c = p._left
+                    p._element = c._element
+                    p = c
+                    x = None
+                    if p._left:
+                        x = p._left
+                    else:
+                        x = p._right
+                    if p == self._root._left:
+                        self._root = p
+            else:
+                if p == self._root:
+                    self._root = None
+                    print('empty')
+        else:
+            if p._left and p._right:
+                s = p._right
+                parent_s = p
+                while s._left:
+                    parent_s = s
+                    s = s._left
+                p._element = s._element
+                p = s
+                parent_p = parent_s
+            c = None
+            if p._left:
+                c = p._left
+            else:
+                c = p._right
+            if p == parent_p._left:
+                parent_p._left = c
+            elif p == parent_p._right:
+                parent_p._right = c
+            else:
+                if p == self._root:
+                    self._root = None
+
+
+
         
 
     def height(self, root):
         h = self._height(root)
         return h-1
+        
     def _height(self, root):
         if root:
             x = self._height(root._left)
@@ -139,28 +206,69 @@ class Binary_Search_Tree:
             
 a = Binary_Search_Tree()
 a.insert(a._root, 40)
-a.recursive_insert(a._root, 12)
-a.insert(a._root, 15)
 a.insert(a._root, 65)
 a.insert(a._root, 60)
+a.insert(a._root, 90)
 a.insert(a._root, 52)
-a.recursive_insert(a._root, 45)
-a.recursive_insert(a._root, 56)
-a.recursive_insert(a._root, 90)
-a.recursive_insert(a._root, 70)
-a.recursive_insert(a._root, 95)
+a.insert(a._root, 45)
+a.insert(a._root, 56)
+a.insert(a._root, 70)
+a.insert(a._root, 95)
+a.insert(a._root, 12)
+a.insert(a._root, 15)
+
+
+
+
+
+
+
+
+a.inorder(a._root)
+
+a.delete(56)
+print()
+a.inorder(a._root)
+
+a.delete(90)
+print()
+a.inorder(a._root)
 
 a.delete(65)
-a.delete(40)
+print()
+a.inorder(a._root)
+
 a.delete(12)
+print()
+a.inorder(a._root)
+
 a.delete(15)
-a.delete(60)
+print()
+a.inorder(a._root)
+
+a.delete(40)
+print()
+a.inorder(a._root)
+
 a.delete(52)
+print()
+a.inorder(a._root)
+
+a.delete(60)
+print()
+a.inorder(a._root)
+
+a.delete(95)
+print()
+a.inorder(a._root)
+
 a.delete(45)
-a.delete(56)
-a.delete(90)
+print()
+a.inorder(a._root)
+
 a.delete(70)
-a.delete(95)
-a.delete(95)
+print()
+a.inorder(a._root)
+
 
 
