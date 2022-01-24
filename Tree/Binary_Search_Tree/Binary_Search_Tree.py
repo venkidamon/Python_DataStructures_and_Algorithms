@@ -135,23 +135,13 @@ class Binary_Search_Tree:
                     c = p._right
                     p._element = c._element
                     p = c
-                    x = None
-                    if p._left:
-                        x = p._left
-                    else:
-                        x = p._right
                     if p == self._root._right:
                         self._root = p
             elif p._right == None and p._left:
                 if element == self._root._element:
                     c = p._left
                     p._element = c._element
-                    p = c
-                    x = None
-                    if p._left:
-                        x = p._left
-                    else:
-                        x = p._right
+                    p = c 
                     if p == self._root._left:
                         self._root = p
             else:
@@ -188,7 +178,7 @@ class Binary_Search_Tree:
     def height(self, root):
         h = self._height(root)
         return h-1
-        
+
     def _height(self, root):
         if root:
             x = self._height(root._left)
