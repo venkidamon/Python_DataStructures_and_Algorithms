@@ -124,6 +124,6 @@ class Linked_List:
 L = Linked_List()
 L.add_last(4)
 L.add_last(9)
-L.add_last(3)
+L.remove_last()
 L.display()
 

@@ -1,3 +1,5 @@
+
+
 """
     Implementation of an AVL tree
 
@@ -310,4 +312,16 @@ if __name__ == "__main__":
     print(tree.find('-222'))
     print(f"min: {tree.min()}")
     print(f"max: {tree.max()}")
+    tree.remove(12)
+    tree.remove(24)
+    tree.remove(10)
+    tree.remove(0)
+    tree.remove(-2)
+    tree.remove(20)
+    tree.remove(21)
+    tree.remove(19)
+    tree.remove(-6)
+    tree.remove(-3)
+    tree.remove(-10)
+    print('------------')
     tree.traverse()
