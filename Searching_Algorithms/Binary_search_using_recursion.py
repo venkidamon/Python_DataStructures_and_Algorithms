@@ -1,20 +1,21 @@
-def bin_recursion(arr, key):
+from operator import le
+from turtle import right
+from winreg import LoadKey
+
+
+def binary_search(arr, key):
     left = 0
-    right = len(arr) 
-    while left <= right:
-        mid = (left + right)//2
-        if len(arr) == 0:
-            return "Not Found"
-        else:
-            if arr[mid] == key:
-                return "Successful"
-            elif key < arr[mid]:
-                return bin_recursion(arr[left : mid], key)
-            elif key > arr[mid]:
-                return bin_recursion(arr[mid+1 : right], key)
-            else:
-                return "Not Found"
+    right = len(arr) - 1
+    mid = (0 + len(arr)) // 2
+    if(left <= right):
+        if arr[mid] == key:
+            return "Successful"
+        elif key < arr[mid]:
+            return binary_search(arr[0:mid], key)
+        elif key > arr[mid]:
+            return binary_search(arr[mid+1: len(arr)], key)
+    else:
+        return "Not found"
 
-
-A = [1,2,3,4]
-print(bin_recursion(A, 5))
+arr = [1,2,3,4,5]
+print(binary_search(arr, -1))
